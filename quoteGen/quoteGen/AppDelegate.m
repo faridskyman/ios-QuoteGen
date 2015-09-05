@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  quoteGen
+//  QuoteGen
 //
-//  Created by farid on 5/9/15.
-//  Copyright (c) 2015 farid. All rights reserved.
+//  Created by eit on 31/8/15.
+//  Copyright (c) 2015 eitmobile. All rights reserved.
 //
 
 #import "AppDelegate.h"
