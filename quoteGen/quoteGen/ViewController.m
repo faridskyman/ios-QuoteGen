@@ -95,10 +95,44 @@
          
          //3. get quote
          //
-         NSString *my_quote = self.movieQuotes[index][@"quote"];
-         NSString *from_movie = self.movieQuotes[index][@"source"];
          
-         self.quoteText.text = [NSString stringWithFormat:@"Quote:\n\n'%@'\n\n-%@", my_quote, from_movie];
+//         NSString *quote = self.movieQuotes[index][@"quote"];
+         NSString *quote = filteredArray[index][@"quote"];
+        
+         //NSString *source = self.movieQuotes[index][@"source"];
+         NSString *source = [[filteredArray objectAtIndex:index] valueForKey:@"source"];
+
+         if([source length] == 0)
+         {
+            source = @"No Source available";
+         }
+         else
+         {
+             // forms the full string to be dislayed
+             quote = [NSString stringWithFormat:@"%@/n/n(%@)", quote, source];
+         }
+         
+         //additional text based on category
+         
+         if([selectedCategoty isEqualToString:@"classic"])
+         {
+             quote = [NSString stringWithFormat:@"From Classic Movie/n/n%@", quote];
+         }
+         else
+         {
+             quote = [NSString stringWithFormat:@"From Modern movie./n/n%@", quote];
+         }
+             
+         //set text to display
+         self.quoteText.text = quote;
+         
+         if([source hasPrefix:@"Harry"])
+         {
+             source = [NSString stringWithFormat:@"Harry was mentioned/n/n%@", quote];
+         }
+         
+         
+         //self.quoteText.text = [NSString stringWithFormat:@"Quote:\n\n'%@'\n\n-%@", quote, source];
          
      }
         else
