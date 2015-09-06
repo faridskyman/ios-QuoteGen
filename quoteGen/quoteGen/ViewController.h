@@ -16,5 +16,7 @@
 @property (nonatomic, strong) IBOutlet UITextView *quoteText;
 - (IBAction)quoteButtonTapped:(id)sender;
 
+@property (nonatomic, strong) IBOutlet UISegmentedControl *quoteOptions;
+
 @end
 

@@ -49,19 +49,52 @@
 
 
 -(IBAction)quoteButtonTapped:(id)sender{
+    //1. get personal quotes when final segment is selected
+    
+    NSString *selectedCategoty = @"";
+    
+    if (self.quoteOptions.selectedSegmentIndex == 2)
+    {
+        NSUInteger arr_tot = [self.myQuotes count];
+        
+        
+        //2. get random index
+        int index = (arc4random() % arr_tot);
+      
+        //3
+        NSString *my_quote = self.myQuotes[index];
+        
+        self.quoteText.text = [NSString stringWithFormat:@"Quote: \n\n%@", my_quote];
+        
+    }
+    else
+    {
+        if(self.quoteOptions.selectedSegmentIndex == 1)
+        {
+            selectedCategoty = @"modern";
+        }
+        else
+        {
+            selectedCategoty = @"classic";
+        }
+        
+        
+        //filter using predicates
+    
+    
     //1. get rows in array
-    int arr_tot = [self.movieQuotes count];
+    NSUInteger arr_tot = [self.movieQuotes count];
     
     //2. get random index
     int index = (arc4random() % arr_tot);
     
     //3. get quote
-    //NSString *my_quote = self.myQuotes[index];
+    //
     NSString *my_quote = self.movieQuotes[index][@"quote"];
     NSString *from_movie = self.movieQuotes[index][@"source"];
     
     self.quoteText.text = [NSString stringWithFormat:@"Quote:\n\n'%@'\n\n-%@", my_quote, from_movie];
-    
+    }
 }
 
 @end
