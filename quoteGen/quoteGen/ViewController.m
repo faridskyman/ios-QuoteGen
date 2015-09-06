@@ -67,6 +67,21 @@
         self.quoteText.text = [NSString stringWithFormat:@"Quote: \n\n%@", my_quote];
         
     }
+    else if (self.quoteOptions.selectedSegmentIndex == 3)
+    {
+        self.quoteText.text = @"option 3 selected";
+        // get count of my quotes
+        NSUInteger array_tot = [self.myQuotes count];
+        NSString *all_my_quotes = @"";
+        NSString *my_quotes = @"";
+        
+        for (int x=0; x<array_tot; x++) {
+            my_quotes = self.myQuotes[x];
+            all_my_quotes = [NSString stringWithFormat:@"%@\n%@", all_my_quotes, my_quotes];
+            }
+        self.quoteText.text = all_my_quotes;
+        
+    }
     else
     {
         if(self.quoteOptions.selectedSegmentIndex == 1)
