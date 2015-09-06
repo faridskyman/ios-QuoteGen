@@ -80,20 +80,34 @@
         
         
         //filter using predicates
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category ==%@", selectedCategoty];
+        NSArray *filteredArray = [self.movieQuotes filteredArrayUsingPredicate:predicate];
     
     
     //1. get rows in array
-    NSUInteger arr_tot = [self.movieQuotes count];
+    NSUInteger arr_tot = [filteredArray count];
     
-    //2. get random index
-    int index = (arc4random() % arr_tot);
+     if(arr_tot > 0)
+     {
+         //2. get random index
+         int index = (arc4random() % arr_tot);
+         
+         //3. get quote
+         //
+         NSString *my_quote = self.movieQuotes[index][@"quote"];
+         NSString *from_movie = self.movieQuotes[index][@"source"];
+         
+         self.quoteText.text = [NSString stringWithFormat:@"Quote:\n\n'%@'\n\n-%@", my_quote, from_movie];
+         
+     }
+        else
+        {
+            self.quoteText.text = [NSString stringWithFormat:@"No quote to display"];
+        }
+        
+        
     
-    //3. get quote
-    //
-    NSString *my_quote = self.movieQuotes[index][@"quote"];
-    NSString *from_movie = self.movieQuotes[index][@"source"];
-    
-    self.quoteText.text = [NSString stringWithFormat:@"Quote:\n\n'%@'\n\n-%@", my_quote, from_movie];
     }
 }
 
