@@ -17,29 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJU-Gc-u2s">
-                                <rect key="frame" x="54" y="64" width="491" height="212"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJU-Gc-u2s">
+                                <rect key="frame" x="16" y="28" width="568" height="397"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="212" id="CeD-cq-jlY"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="IowanOldStyle-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tBh-HG-Z74">
-                                <rect key="frame" x="66" y="398" width="201" height="29"/>
-                                <segments>
-                                    <segment title="Classic"/>
-                                    <segment title="Modern"/>
-                                    <segment title="Mine"/>
-                                    <segment title="All"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6S-zt-W9L">
-                                <rect key="frame" x="54" y="312" width="205" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6S-zt-W9L">
+                                <rect key="frame" x="198" y="550" width="205" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="PJ4-NC-as7"/>
+                                    <constraint firstAttribute="width" constant="205" id="h3X-bx-I6D"/>
                                 </constraints>
                                 <state key="normal" title="Load a Quote">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,14 +43,27 @@
                                     <action selector="quoteButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="07W-xh-5ly"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tBh-HG-Z74">
+                                <rect key="frame" x="16" y="508" width="568" height="29"/>
+                                <segments>
+                                    <segment title="Classic"/>
+                                    <segment title="Modern"/>
+                                    <segment title="Mine"/>
+                                    <segment title="All"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="z6S-zt-W9L" firstAttribute="top" secondItem="DJU-Gc-u2s" secondAttribute="bottom" constant="51" id="426-St-bh2"/>
-                            <constraint firstItem="DJU-Gc-u2s" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="44" id="F2o-Yg-htV"/>
-                            <constraint firstItem="DJU-Gc-u2s" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="38" id="dUo-gX-7bf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DJU-Gc-u2s" secondAttribute="trailing" constant="39" id="eij-s9-Ypk"/>
-                            <constraint firstItem="z6S-zt-W9L" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="rSO-yF-aLd"/>
+                            <constraint firstItem="tBh-HG-Z74" firstAttribute="top" secondItem="DJU-Gc-u2s" secondAttribute="bottom" constant="83" id="155-Je-oor"/>
+                            <constraint firstItem="tBh-HG-Z74" firstAttribute="centerX" secondItem="z6S-zt-W9L" secondAttribute="centerX" id="DGH-Mm-o90"/>
+                            <constraint firstItem="z6S-zt-W9L" firstAttribute="top" secondItem="tBh-HG-Z74" secondAttribute="bottom" constant="14" id="Jp1-5B-ndr"/>
+                            <constraint firstItem="DJU-Gc-u2s" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="T44-Zc-dQN"/>
+                            <constraint firstItem="tBh-HG-Z74" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Z6L-hN-dgo"/>
+                            <constraint firstItem="DJU-Gc-u2s" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="a8f-Xj-wXI"/>
+                            <constraint firstItem="DJU-Gc-u2s" firstAttribute="leading" secondItem="tBh-HG-Z74" secondAttribute="leading" id="nkI-Xi-Mct"/>
+                            <constraint firstAttribute="bottom" secondItem="z6S-zt-W9L" secondAttribute="bottom" constant="20" symbolic="YES" id="u3b-B7-7VC"/>
+                            <constraint firstItem="tBh-HG-Z74" firstAttribute="trailing" secondItem="DJU-Gc-u2s" secondAttribute="trailing" id="ukr-3n-Jb1"/>
                         </constraints>
                     </view>
                     <connections>
